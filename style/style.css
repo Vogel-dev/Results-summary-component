@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap");
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Hanken Grotesk", sans-serif;
+}
+
+p {
+  font-size: 18px;
+}
+
+.component {
+  border: 1px solid red;
+  width: 750px;
+  height: 500px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.result {
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to bottom, #7857ff, #2e2be9);
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.result-header {
+  font-size: 22px;
+  color: #c8c7ff;
+  margin-top: 35px;
+}
+
+.result-points {
+  background: linear-gradient(to bottom, #4e21ca, rgba(36, 33, 202, 0));
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-top: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.result-your-points {
+  font-size: 66px;
+  color: white;
+}
+
+.result-max-points {
+  font-size: 16px;
+  color: #c8c7ff;
+}
+
+.result-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 75%;
+  margin-top: 35px;
+  text-align: center;
+}
+
+.result-grade {
+  font-size: 28px;
+  color: white;
+}
+
+.result-feedback {
+  font-size: 18px;
+  color: #c8c7ff;
+}
