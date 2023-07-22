@@ -4,16 +4,25 @@ $summary-red: hsl(0, 100%, 67%);
 $summary-yellow: hsl(39, 100%, 56%);
 $summary-green: hsl(166, 100%, 37%);
 $summary-blue: hsl(234, 85%, 45%);
+// Summary-background variables
+$summary-bg-red: hsla(0, 100%, 67%, 0.2);
+$summary-bg-yellow: hsla(39, 100%, 56%, 0.2);
+$summary-bg-green: hsla(166, 100%, 37%, 0.2);
+$summary-bg-blue: hsla(234, 85%, 45%, 0.2);
 // Gradient variables
 $bg1-gradient: hsl(252, 100%, 67%);
 $bg2-gradient: hsl(241, 81%, 54%);
+$bg3-gradient: hsla(252, 100%, 67%, 0.3);
+$bg4-gradient: hsla(241, 81%, 54%, 0.3);
 $circle1-gradient: hsla(256, 72%, 46%, 1);
 $circle2-gradient: hsla(241, 72%, 46%, 0);
 // Other variables
 $white: hsl(0, 0%, 100%);
 $pale-blue: hsl(221, 100%, 96%);
 $light-lavender: hsl(241, 100%, 89%);
+$dark-lavender: hsl(0, 0%, 54%);
 $dark-gray-blue: hsl(224, 30%, 27%);
+$gray-blue: hsla(224, 30%, 27%, 0.95);
 
 * {
   box-sizing: border-box;
@@ -22,18 +31,40 @@ $dark-gray-blue: hsl(224, 30%, 27%);
   font-family: "Hanken Grotesk", sans-serif;
 }
 
+body {
+  background: linear-gradient(-45deg, $bg3-gradient, $bg4-gradient);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 p {
   font-size: 18px;
 }
 
 .component {
-  border: 1px solid red;
   width: 750px;
   height: 500px;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border-radius: 25px;
+  display: flex;
+  background: $white;
 }
 
 .result {
@@ -75,21 +106,132 @@ p {
 }
 
 .result-info {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 75%;
-    margin-top: 35px;
-    text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 75%;
+  margin-top: 35px;
+  text-align: center;
 }
 
 .result-grade {
-    font-size: 28px;
-    color: $white;
+  font-size: 28px;
+  color: $white;
 }
 
 .result-feedback {
-    font-size: 18px;
-    color: $light-lavender;
+  font-size: 18px;
+  color: $light-lavender;
+}
+
+.summary {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 35px 0px 35px;
+  background: $white;
+}
+
+.summary-header {
+  font-size: 22px;
+  margin-top: 35px;
+  font-weight: 700;
+  color: $dark-gray-blue;
+  margin-bottom: 16px;
+}
+
+.summary-list-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  gap: 12px;
+  width: 300px;
+  height: 55px;
+  border-radius: 12px;
+}
+
+.list-img,
+.list-title {
+  margin-left: 16px;
+}
+
+.list-max-points {
+  margin-right: 16px;
+}
+
+.list-header {
+  display: flex;
+}
+
+.list-points {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.reaction-bg {
+  background: $summary-bg-red;
+}
+
+.memory-bg {
+  background: $summary-bg-yellow;
+}
+
+.verbal-bg {
+  background: $summary-bg-green;
+}
+
+.visual-bg {
+  background: $summary-bg-blue;
+}
+
+.title-reaction {
+  color: $summary-red;
+}
+
+.title-memory {
+  color: $summary-yellow;
+}
+
+.title-verbal {
+  color: $summary-green;
+}
+
+.title-visual {
+  color: $summary-blue;
+}
+
+.list-your-points {
+  color: $dark-gray-blue;
+}
+
+.list-max-points {
+  color: $dark-lavender;
+}
+
+a:visited {
+  color: $white;
+  text-decoration: none;
+}
+
+.btn {
+  margin-top: 35px;
+  height: 55px;
+  background: $dark-gray-blue;
+  color: $white;
+  font-size: 18px;
+  border: 0;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.btn:hover {
+  background: $gray-blue;
+  transform: scale(105%);
+}
+
+.btn:active {
+  background: linear-gradient(to bottom, $bg1-gradient, $bg2-gradient);
 }
